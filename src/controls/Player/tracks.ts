@@ -11,11 +11,13 @@ export const TrackList: Track[] = [
     albumUrl: AlbumUrl1,
     trackName: "No Turning Back - JJ Lin",
     trackUrl: TrackUrl1,
+    themeColor: "#3F6671",
   },
   {
     albumName: "IDEM",
     albumUrl: AlbumUrl2,
     trackName: "Breakaway - Martin Garrix & Mesto",
     trackUrl: TrackUrl2,
+    themeColor: "#4E9AA4",
   },
 ];
