@@ -7,3 +7,8 @@
     @apply relative border-1 border-white/20 bg-background/20 subpixel-antialiased shadow-small backdrop-blur backdrop-saturate-150;
   }
 }
+
+body {
+  user-select: none;
+  overflow: hidden;
+}

@@ -19,22 +19,23 @@ export interface BackgroundProps {
   containerClassName?: string;
 }
 
-const Background: FC<BackgroundProps> = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
-  secondColor = "221, 74, 255",
-  thirdColor = "100, 220, 255",
-  fourthColor = "200, 50, 50",
-  fifthColor = "180, 180, 50",
-  pointerColor = "140, 100, 255",
-  size = "80%",
-  blendingValue = "hard-light",
-  children,
-  className,
-  interactive = true,
-  containerClassName,
-}) => {
+const Background: FC<BackgroundProps> = (props) => {
+  const {
+    gradientBackgroundStart = "rgb(108, 0, 162)",
+    gradientBackgroundEnd = "rgb(0, 17, 82)",
+    firstColor = "18, 113, 255",
+    secondColor = "221, 74, 255",
+    thirdColor = "100, 220, 255",
+    fourthColor = "200, 50, 50",
+    fifthColor = "180, 180, 50",
+    pointerColor = "140, 100, 255",
+    size = "80%",
+    blendingValue = "hard-light",
+    children,
+    className,
+    interactive = true,
+    containerClassName,
+  } = props;
   const interactiveRef = useRef<HTMLDivElement>(null);
 
   const [curX, setCurX] = useState(0);
@@ -59,7 +60,8 @@ const Background: FC<BackgroundProps> = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+    console.log(1);
+  }, [props]);
 
   useEffect(() => {
     function move() {
