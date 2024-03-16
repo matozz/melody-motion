@@ -1,8 +1,8 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from "react";
 
-import { cn } from '@nextui-org/system';
+import { cn } from "@nextui-org/system";
 
-interface BackgroundProps {
+export interface BackgroundProps {
   gradientBackgroundStart?: string;
   gradientBackgroundEnd?: string;
   firstColor?: string;
