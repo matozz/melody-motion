@@ -1,9 +1,9 @@
 export type Track = {
   trackName: string;
-  trackUrl: string;
+  trackPath: string;
   albumName: string;
-  albumUrl: string;
-  themeColor: string;
+  albumPath: string;
+  themeColor: string[];
 };
 
 export type ReducerAction = {

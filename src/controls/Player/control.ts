@@ -2,6 +2,8 @@ import { useRef, useEffect } from "react";
 
 import { useAtom, useAtomValue } from "jotai";
 
+import { supabase } from "@/supabase";
+
 import { playerAtom, trackAtom } from "./state";
 import { PlayerStatus, Track } from "./types";
 
@@ -32,8 +34,10 @@ export const usePlayerControl = () => {
       console.log(`loading track: ${newTrack.trackName}`);
       dispatch({ type: "LOADING", loading: true });
       try {
-        const response = await fetch(newTrack.trackUrl);
-        const arrayBuffer = await response.arrayBuffer();
+        const { data } = await supabase.storage
+          .from("assets")
+          .download(newTrack.trackPath);
+        const arrayBuffer = await data.arrayBuffer();
         const audioBuffer = await acRef.current.decodeAudioData(arrayBuffer);
 
         abRef.current = audioBuffer;
