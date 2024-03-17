@@ -46,9 +46,10 @@ const playerReducer = (
         ...state,
         currentTime: 0,
         totalTime: 0,
-        currentTrackIndex: Math.abs(
-          (state.currentTrackIndex - 1) % state.tracklist.length,
-        ),
+        currentTrackIndex:
+          state.currentTrackIndex === 0
+            ? state.tracklist.length - 1
+            : state.currentTrackIndex - 1,
       };
     case "NEXT_TRACK":
       console.log("user trigger next track");
@@ -56,9 +57,10 @@ const playerReducer = (
         ...state,
         currentTime: 0,
         totalTime: 0,
-        currentTrackIndex: Math.abs(
-          (state.currentTrackIndex + 1) % state.tracklist.length,
-        ),
+        currentTrackIndex:
+          state.currentTrackIndex === state.tracklist.length - 1
+            ? 0
+            : state.currentTrackIndex + 1,
       };
     case "RESET":
       return initPlayerState;

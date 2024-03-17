@@ -9,12 +9,9 @@ import { getBackgroundColors } from "@/utils";
 
 import { trackAtom } from "./controls/Player/state";
 
-// import useTheme from "./hooks/useTheme";
-
 function App() {
-  // useTheme();
   const track = useAtomValue(trackAtom);
-  const colorProps = getBackgroundColors(track.themeColor);
+  const colorProps = getBackgroundColors(track.themeColor[0]);
 
   return (
     <Background {...colorProps}>

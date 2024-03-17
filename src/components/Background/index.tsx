@@ -60,7 +60,6 @@ const Background: FC<BackgroundProps> = (props) => {
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-    console.log(1);
   }, [props]);
 
   useEffect(() => {
